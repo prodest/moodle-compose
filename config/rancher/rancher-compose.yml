@@ -1,0 +1,14 @@
+redis:
+  scale: 1
+lb:
+  scale: 1
+  health_check:
+    port: 42
+    interval: 5000
+    unhealthy_threshold: 3
+    healthy_threshold: 2
+    response_timeout: 5000
+webserver:
+  scale: 1
+mysql:
+  scale: 1

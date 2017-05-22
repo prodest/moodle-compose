@@ -1,0 +1,30 @@
+redis:
+  image: redis
+lb:
+  ports:
+    - 80:80
+    - 443:443
+  tty: true
+  image: rancher/load-balancer-service
+  links:
+    - webserver:webserver
+  stdin_open: true
+webserver:
+  environment:
+    - TZ=America/Sao_Paulo
+    - CI_ENV=development
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.container.hostname_override: container_name
+  image: gotavio/mlfacil
+  links:
+    - redis:redis
+    - mysql:mysql
+mysql:
+  environment:
+    MYSQL_DATABASE: mlfacil
+    MYSQL_ROOT_PASSWORD: root
+    TZ: America/Sao_Paulo
+  image: mysql
+  volumes:
+    - /home/core/data/mysql:/var/lib/mysql
