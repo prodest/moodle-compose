@@ -1,16 +1,15 @@
 version: '2'
 services:
-  moodledata:
-    image: prodest/moodle-docker:moodledata
   mysql:
     image: prodest/moodle-docker:mariadb
-    depends_on:
-      - moodledata
-    volumes_from: 
-      - moodledata
+    volumes: 
+      - ./moodledata/sql:/docker-entrypoint-initdb.d
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=moodle
+    ports:
+      - 3306:3306
   redis:
     image: redis
   webserver:
@@ -18,13 +17,15 @@ services:
     depends_on:
       - mysql
       - redis
-      - moodledata
     links:
       - mysql:mysql
       - redis:redis
-    volumes_from: 
-      - moodledata
+    volumes: 
+      - ./moodledata/moodle:/var/www/src/public
+      - ./moodledata/moodledata:/var/www/src/moodledata
     environment:
       - CI_ENV=development
       - TZ=America/Sao_Paulo
     restart: always
+    ports: 
+      - 80:80
