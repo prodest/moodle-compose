@@ -1,13 +1,13 @@
-# projeto moodle para o portal oportunidades.es.gov.br 
+# Projeto moodle para o portal oportunidades.es.gov.br 
 
-## projeto 
+## Projeto 
 O governo do estado através da SECTI (Secretaria da Ciência, Tecnologia, Inovação e Educação Profissional) desenvolveu juntamente com a Prodest (Instituto de Tecnologia da Informação e Comunicação do Espírito Santo), uma implantação e customização de uma plataforma AVA (Ambiente virtual de Aprendizagem).
 
 O objetivo é o portal de Oportunidades do governo do Estado.
 
 [link do portal](http://online.oportunidades.es.gov.br/)
 
-## como usar:
+## Como usar:
 - na pasta moodledata, copie o stage.sql para moodle.sql
 - crie uma pasta com permissão de escrita geral (chmod a+wr) dentro de moodledata chamado moodledata
 - na raiz do projeto execute o docker-compose
@@ -23,7 +23,7 @@ O objetivo é o portal de Oportunidades do governo do Estado.
 - entre na url (dev.oportunidades.es.gov.br)
 
 
-## trocando url antes de instalar
+## Trocando url antes de instalar
 
 Caso queira colocar outra url, inclusive url local, como "localhost" ou 
 "localhost:8080", basta fazer esses passos:
