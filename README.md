@@ -21,3 +21,34 @@ O objetivo é o portal de Oportunidades do governo do Estado.
 	docker-compose up -d
 ```
 - entre na url (dev.oportunidades.es.gov.br)
+
+
+## trocando url antes de instalar
+
+Caso queira colocar outra url, inclusive url local, como "localhost" ou 
+"localhost:8080", basta fazer esses passos:
+
+- antes de executar o primeiro passo da instrução de uso, vá na pasta onde está o arquivo stage.sql e execute o comando:
+```bash
+sed -e 's/dev.oportunidades.es.gov.br/<minha url>/g' stage.sql > sql/moodle.sql
+```
+- execute todos os passos da instrução de uso, e quando estiver com o seu config.php, altere o config.php:
+
+de:
+
+```php
+$CFG->wwwroot   = 'http://dev.oportunidades.es.gov.br';
+```
+para:
+
+```php
+$CFG->wwwroot   = 'http://<minha url>';
+```
+
+Uma vez instalado, a troca de url devem serem feitas conforme instruções do próprio [mooodle](https://docs.moodle.org/33/en/Moodle_migration):
+
+
+## Contribuições
+
+- Qualquer correção ou observação devem ser feitas por [pull-requests](https://blog.da2k.com.br/2015/02/04/git-e-github-do-clone-ao-pull-request/), e utilizem o canal de [issues](https://github.com/prodest/moodle-compose/issues) para relatar problemas.
+
