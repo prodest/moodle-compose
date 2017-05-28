@@ -45,10 +45,15 @@ para:
 $CFG->wwwroot   = 'http://<minha url>';
 ```
 
-Uma vez instalado, a troca de url devem serem feitas conforme instruções do próprio [mooodle](https://docs.moodle.org/33/en/Moodle_migration):
-
+Uma vez instalado, a troca de url devem serem feitas conforme instruções do próprio [moodle](https://docs.moodle.org/33/en/Moodle_migration):
 
 ## Contribuições
 
 - Qualquer correção ou observação devem ser feitas por [pull-requests](https://blog.da2k.com.br/2015/02/04/git-e-github-do-clone-ao-pull-request/), e utilizem o canal de [issues](https://github.com/prodest/moodle-compose/issues) para relatar problemas.
 
+
+## Links Úteis
+- [Entendendo docker](http://www.mundodocker.com.br/o-que-e-docker/)
+- [Entendendo docker-compose](http://www.mundodocker.com.br/docker-compose/)
+- [Entendendo sobre git e git-flow para contribuir em projetos (parte 1)](https://medium.com/trainingcenter/git-da-necessidade-a-automa%C3%A7%C3%A3o-de-sua-release-parte-1-a9d697e8f9ee)
+- [Entendendo sobre git e git-flow para contribuir em projetos (parte 2)](https://medium.com/trainingcenter/git-da-necessidade-a-automa%C3%A7%C3%A3o-de-sua-release-parte-2-410b95c6d7cf)
