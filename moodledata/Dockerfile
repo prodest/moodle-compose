@@ -1,6 +1,6 @@
 FROM busybox
 
-RUN mkdir -p /var/www/src/public && \ 
+RUN mkdir -p /var/www/src/public && \
     mkdir -p /var/www/src/moodledata && \
     mkdir -p /docker-entrypoint-initdb.d
 
@@ -10,4 +10,4 @@ COPY moodledata/ /var/www/src/moodledata
 
 RUN  chmod -R a+wr /var/www/src/moodledata
 
-VOLUME ["/var/www/src/public", "/var/www/src/moodledata", "/docker-entrypoint-initdb.d"]
+VOLUME ["/var/www/src/public", "/docker-entrypoint-initdb.d"]
